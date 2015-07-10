@@ -3,17 +3,16 @@
   yum: name=ntpdate state=present
   when: ansible_os_family == 'RedHat'
 
-- name: install ntpdate
-  apt: name=ntpdate state=present
+- name: install ntp packages
+  apt: name={{ item }} state=present
   when: ansible_os_family == 'Debian'
+  with_items:
+     - ntp
+     - ntpdate
 
 - name: install ntp
   yum: name=ntp state=present
   when: ansible_os_family == 'RedHat'
-
-- name: install ntp
-  apt: name=ntp state=present
-  when: ansible_os_family == 'Debian'
 
 - name: enable ntpdate service
   service: name=ntpdate state=started enabled=yes

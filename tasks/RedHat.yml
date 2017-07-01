@@ -1,0 +1,12 @@
+---
+- name: install ntpdate
+  yum: name=ntpdate state=present
+
+- name: install ntp
+  yum: name=ntp state=present
+
+- name: enable ntpdate service
+  service: name=ntpdate state=started enabled=yes
+
+- name: enable ntpd service
+  service: name=ntpd state=started enabled=yes

@@ -1,0 +1,9 @@
+---
+- name: install ntp packages
+  apt: name={{ item }} state=present
+  with_items:
+     - ntp
+     - ntpdate
+
+- name: enable ntp service
+  service: name=ntp state=started enabled=yes

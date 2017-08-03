@@ -1,0 +1,8 @@
+- name: put /etc/ntp.conf
+  template: src=ntp.conf dest=/etc/ntp.conf
+
+- name: enable ntpd
+  service: name=ntpd state=started enabled=yes
+
+- name: enable ntpd
+  shell: chkconfig --level 345 ntpd on

@@ -7,6 +7,7 @@
 
 - name: enable ntpdate service
   service: name=ntpdate state=started enabled=yes
+  ignore_errors: yes
 
 - name: enable ntpd service
   service: name=ntpd state=started enabled=yes

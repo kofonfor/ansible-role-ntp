@@ -1,9 +1,9 @@
 ---
-- include: RedHat.yml
+- include_tasks: RedHat.yml
   when: ansible_os_family == 'RedHat'
 
-- include: Debian.yml
+- include_tasks: Debian.yml
   when: ansible_os_family == 'Debian'
 
-- include: Elbrus.yml
+- include_tasks: Elbrus.yml
   when: ansible_os_family == 'Elbrus'

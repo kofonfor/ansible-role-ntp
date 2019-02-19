@@ -5,4 +5,4 @@
   service: name=ntpd state=started enabled=yes
 
 - name: enable ntpd
-  shell: chkconfig --level 345 ntpd on
+  command: chkconfig --level 345 ntpd on
